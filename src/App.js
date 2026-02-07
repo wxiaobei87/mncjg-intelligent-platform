@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import * as recharts from "recharts";
 
 const {
@@ -783,7 +783,7 @@ function MaterialComparisonPanel() {
       adsorbent: a, pollutant: p,
       removal: predictRemoval(a, p, 6, p === "Nap" ? 50 : 5, 30).mean,
     })));
-  }, []);
+  }, [adsorbents, pollutants, predictRemoval]);
 
   // Cycle performance data
   const cycleData = useMemo(() => {
